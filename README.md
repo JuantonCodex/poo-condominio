@@ -1,4 +1,4 @@
-# Administración de Condomindio
+# Administración de Condominio
 Proyecto Condominio para el curso de Programación Orientada a Objetos
 
 ## Patrones
