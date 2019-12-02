@@ -1,3 +1,5 @@
+require_relative '../utils/PrintUtil'
+
 class BaseView
 
     def initialize
@@ -5,11 +7,11 @@ class BaseView
     end
 
     def show_message(message)
-       puts message 
+        PrintUtil.printMessage(message)
     end
 
     def mostrar_error
-        puts "Error, revise la información ingresada"
+        PrintUtil.printMessage("Error, revise la información ingresada")
     end
 
 end

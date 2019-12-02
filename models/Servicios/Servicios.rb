@@ -6,6 +6,5 @@ class Servicios
         @servicioID, @nombre = servicioID, nombre
   end
   def calcularPago
-    return 'Clase Padre'
   end
 end
