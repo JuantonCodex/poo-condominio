@@ -1,12 +1,6 @@
 require_relative './Servicios.rb'
 class Luz < Servicios
-  def initialize
-  end
-  def calcularPago
-    puts super + ' y subclase'
+  def initializetipo(servicioID, nombre)
+    super(servicioID, nombre)
   end
 end
-
-# Lineas de prueba de herencia
-luz = Luz.new();
-luz.calcularPago()
