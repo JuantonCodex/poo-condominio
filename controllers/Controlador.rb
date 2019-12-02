@@ -1,4 +1,5 @@
 require_relative '../controllers/BaseControlador'
+require_relative '../repositories/ServicioRepository'
 
 class Controlador
 
@@ -9,8 +10,10 @@ class Controlador
 		@administracion = administracion
 	end
 
-	def listarVisitaXFecha
-		
-	end
+   def cargarServicios
+   		servicioRepo = ServicioRepository.new
+   		servicios = servicioRepo.obtenerServicios
+   end
 
 end
+

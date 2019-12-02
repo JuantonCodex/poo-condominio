@@ -1,6 +1,6 @@
 require_relative './Servicios.rb'
 class Luz < Servicios
-  def initializetipo(servicioID, nombre)
+  def initialize(servicioID, nombre)
     super(servicioID, nombre)
   end
 end

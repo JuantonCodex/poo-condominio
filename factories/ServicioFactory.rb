@@ -6,7 +6,7 @@ require_relative '../models/Servicios/Seguridad.rb'
 class ServicioFactory
 
   def self.create(codigo, nombre)
-    case codigo
+    case nombre
     when 'Area Comun'
       AreaComun.new(codigo, nombre)
     when 'Limpieza'
