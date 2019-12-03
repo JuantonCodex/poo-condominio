@@ -8,7 +8,6 @@ class Familia < Persona
   	'Familia'
   end
 
-
 	def muestraDatos
 		"Nombres: #{nombre} #{apellido}  - DNI: #{dni} - Edad:  #{edad}"
 	end

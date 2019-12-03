@@ -8,4 +8,9 @@ class Vista
    	  	 puts visita.muestraDatos
    	  end
    end
+   def imprimirListaPersonas(arregloPersonas)
+   	  for persona in arregloPersonas
+   	  	 puts persona.muestraDatos
+   	  end
+   end
 end
