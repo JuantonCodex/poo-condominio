@@ -1,7 +1,7 @@
-require_relative '../controllers/BaseControlador'
-require_relative '../repositories/ServicioRepository'
-require_relative '../repositories/PersonaRepository'
-require_relative '../repositories/HabitacionRepository'
+require_relative '../controllers/BaseControlador.rb'
+require_relative '../repositories/ServicioRepository.rb'
+require_relative '../repositories/PersonaRepository.rb'
+require_relative '../repositories/HabitacionRepository.rb'
 
 class Controlador
 
@@ -39,6 +39,18 @@ class Controlador
    	   arreglo = administracion.obtenerVisitasXRangoFecha(fechaInicial,fechaFin)
    	   vista.imprimirListado(arreglo)
    	   puts "-------------------"
+   end
+
+   def registrarPersona(tipo, *arg)
+      persona = Factory.dameObjeto(tipo, *arg)
+      resultado = administracion.registrarPersona(persona)
+      #vista.mostrarMensaje(resultado)
+   end
+   def obtenerListaPersonas(tipo)
+         puts "Lista de personas"
+         arregloPersonas = administracion.obtenerListaPersonas()
+         vista.imprimirListado(arregloPersonas)
+         puts "-------------------"
    end
 
 end

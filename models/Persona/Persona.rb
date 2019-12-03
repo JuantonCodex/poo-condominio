@@ -7,4 +7,6 @@ class Persona
   end
   def dameTipo
   end
+  def muestraDatos
+  end
 end
