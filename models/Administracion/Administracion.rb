@@ -4,7 +4,18 @@ require_relative '../../repositories/ServicioRepository'
 require_relative '../../repositories/HabitacionRepository'
 
 class Administracion
+	attr_accessor :nombre, :apellido, :condominio, :arregloPersonas, :arregloHabitaciones, :arregloServicios, :arregloPagoServicios
+	def initialize(nombre, apellido, condominio)
+		@nombre = nombre
+		@apellido = apellido
+		@condominio = condominio
+		@arregloPersonas = []
+		@arregloHabitaciones = []
+		@arregloServicios = []
+		@arregloPagoServicios = []
+	end
 
+<<<<<<< HEAD
   attr_accessor :arreglo_personas, :arreglo_habitaciones, :arreglo_servicios, :arreglo_pago_servicios, :habitacionRepo, :servicioRepo
   def initialize
     @arreglo_personas = []
@@ -56,5 +67,25 @@ class Administracion
     end
     return temp
   end
+=======
+	def registrarHabitacion(habitacion)
+		arregloHabitaciones.push(habitacion)
+	end
 
+	def registrarPersona(persona)
+		arregloPersonas.push(persona)
+	end
+
+	def registrarServicio(servicio)
+		arregloServicios.push(servicio)
+	end
+>>>>>>> 6f2ed550996c1ddb4143b8170646ae938ab97080
+
+	def registrarPagoServicio(pagoServicio)
+		arregloPagoServicios.push(pagoServicio)
+	end
+
+	def obtenerListaPersonas
+		return arregloPersonas
+	end
 end
