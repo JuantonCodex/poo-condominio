@@ -26,7 +26,7 @@ class Controlador
     when "habitacion"
       resultado = administracion.registrarHabitacion(objeto)
     when "servicio"
-      puts 'registrar servicio'
+      resultado = administracion.registrarServicio(objeto)
     end
 
     # Muestra el resultado del registro
@@ -39,6 +39,12 @@ class Controlador
     habitaciones = administracion.obtenerHabitaciones()
     vista.imprimirListado(habitaciones)
   end
+
+  def obtenerServicios
+    servicios = administracion.obtenerServicios()
+    vista.imprimirListado(servicios)
+  end
+
   # def cargarServicios
   #   servicioRepo = ServicioRepository.new
   #   servicios = servicioRepo.obtenerServicios
