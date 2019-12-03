@@ -29,4 +29,13 @@ class Administracion
 	def obtenerListaPersonas
 		return arregloPersonas
 	end
+	def obtenerVisitasXFecha(fecha)
+		arreglo = []
+		for persona in arregloPersonas
+			if persona.fechaVisita == fecha
+				arreglo.push(persona)
+			end
+		end
+		return arreglo
+	end
 end
