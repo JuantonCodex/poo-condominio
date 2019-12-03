@@ -13,6 +13,8 @@ class TestCondominio < Test::Unit::TestCase
 
 		@controlador.registrarPersona("familia", 1, 1, "Celso", "Cerrano", 40404040, 32)
 		@controlador.registrarPersona("familia", 2, 2, "Rocel", "Chavez", 40404041, 35)
+		@controlador.registrarPersona("visita", 3, 1, "Raquel", "Sanchez", 40404042, 29, "2019-12-01")
+		@controlador.registrarPersona("visita", 4, 1, "Andrea", "Vivas", 40404043, 30, "2019-11-20")
 		
 	end
 	def testListaPersonas

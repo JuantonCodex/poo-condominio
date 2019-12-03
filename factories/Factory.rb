@@ -9,7 +9,7 @@ class Factory
      when "familia"
           return Familia.new(arg[0], arg[1], arg[2], arg[3],arg[4], arg[5])
      when "visita"
-         return Visita.new(arg[0], arg[1], arg[2], arg[3],arg[4], arg[5])
+         return Visita.new(arg[0], arg[1], arg[2], arg[3],arg[4], arg[5], arg[6])
      end
   end  
 end

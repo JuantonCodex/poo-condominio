@@ -10,6 +10,6 @@ class Visita < Persona
 	end
 
 	def muestraDatos
-		super + "Nombres: #{nombre} #{apellido}  - DNI: #{dni} - Edad:  #{edad} - Fecha: #{fechaVisita}"
+		"Nombres: #{nombre} #{apellido}  - DNI: #{dni} - Edad:  #{edad} - Fecha: #{fechaVisita}"
 	end
 end
