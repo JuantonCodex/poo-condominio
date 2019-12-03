@@ -1,11 +1,13 @@
 class Vista
 
-   def mostrarMensaje(resultado)
-   	  puts resultado
-   end
-   def imprimirListado(arregloVisita)
-   	  for visita in arregloVisita
-   	  	 puts visita.muestraDatos
-   	  end
-   end
+
+  def mostrarMensaje(resultado)
+    puts resultado
+  end
+
+  def imprimirListado(listado)
+    for item in listado
+      puts item.muestraDatos
+    end
+  end
 end

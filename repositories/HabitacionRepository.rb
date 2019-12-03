@@ -1,29 +1,19 @@
 require_relative '../models/Habitacion/Habitacion.rb'
 
 class HabitacionRepository
-
+  attr_accessor :arregloHabitaciones
   def initialize()
-    @habitaciones = []
+    @arregloHabitaciones = []
   end
 
-  def cargarHabitaciones()
-
-    habitacion1 = Habitacion.new(1,'E','1','101')
-    habitacion2 = Habitacion.new(2,'A','1','102')
-    habitacion3 = Habitacion.new(3,'B','2','201')
-    habitacion4 = Habitacion.new(4,'C','2','202')
-
-    agregarHabitacion(habitacion1)
-    agregarHabitacion(habitacion2)
-    agregarHabitacion(habitacion3)
-    agregarHabitacion(habitacion4)
-
-    return habitaciones
-
+  # Devuelve la lista de habitaciones registradas
+  def obtenerHabitaciones()
+    return arregloHabitaciones
   end
 
-  def agregarHabitacion(habitacion)
-    habitaciones.push(habitacion)
+  def registrarHabitacion(habitacion)
+    arregloHabitaciones.push(habitacion)
+    return 'Habitación registrada'
   end
-  
+
 end
