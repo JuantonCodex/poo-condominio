@@ -2,6 +2,7 @@ require_relative '../controllers/BaseControlador.rb'
 require_relative '../repositories/ServicioRepository.rb'
 require_relative '../repositories/PersonaRepository.rb'
 require_relative '../repositories/HabitacionRepository.rb'
+require_relative '../factories/Factory.rb'
 
 class Controlador
 
@@ -46,7 +47,7 @@ class Controlador
       resultado = administracion.registrarPersona(persona)
       #vista.mostrarMensaje(resultado)
    end
-   def obtenerListaPersonas(tipo)
+   def obtenerListaPersonas()
          puts "Lista de personas"
          arregloPersonas = administracion.obtenerListaPersonas()
          vista.imprimirListado(arregloPersonas)

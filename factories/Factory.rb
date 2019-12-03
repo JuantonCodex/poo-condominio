@@ -1,4 +1,5 @@
 # Clase Factory principal
+require "test/unit"
 require_relative '../models/Persona/Familia.rb'
 require_relative '../models/Persona/Visita.rb'
 
