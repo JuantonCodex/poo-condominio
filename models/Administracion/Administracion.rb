@@ -38,4 +38,17 @@ class Administracion
 		end
 		return arreglo
 	end
+
+	def obtenerVisitasXRangoFecha(fechaInicial, fechaFinal)
+		arreglo = []
+		for persona in arregloPersonas
+			if persona.dameTipo == 'Visita'
+				if persona.fechaVisita >= fechaInicial and persona.fechaVisita <= fechaFinal
+					arreglo.push(persona)
+				end	
+			end
+			
+		end
+		return arreglo
+	end
 end

@@ -17,11 +17,15 @@ class TestCondominio < Test::Unit::TestCase
 		@controlador.registrarPersona("visita", 4, 1, "Andrea", "Vivas", 40404043, 30, "2019-11-20")		
 		
 	end
-	def testListaPersonas
+	def test1ListaPersonas
 		@controlador.obtenerListaPersonas()
 	end
 
-	def testBuscarVisitaXFecha
+	def test2BuscarVisitaXFecha
 		@controlador.obtenerVisitasXFecha("2019-12-01")
+	end
+
+	def test3BuscarVisitaXRangoFecha
+		@controlador.obtenerVisitasXRangoFecha("2019-11-19", "2019-12-02")
 	end
 end
