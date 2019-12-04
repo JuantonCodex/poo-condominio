@@ -3,17 +3,19 @@ require_relative '../models/Persona/Visita.rb'
 
 class PersonaRepository
   attr_accessor :arregloPersonas
-  def initialize()
+
+  def initialize
     @arregloPersonas = []
   end
 
   # Devuelve la lista de habitaciones registradas
-  def obtenerPersonas()
+  def obtenerPersonas
     return arregloPersonas
   end
 
   def registrarPersona(persona)
     arregloPersonas.push(persona)
+    return 'Habitación registrada'
   end
 
 end

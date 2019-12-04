@@ -4,14 +4,12 @@ require_relative '../../repositories/HabitacionRepository.rb'
 
 class Administracion
 	attr_accessor :personaRepo, :habitacionRepo
-	def initializes
+	def initialize
 		# @nombre = nombre
 		# @apellido = apellido
 		# @condominio = condominio
 		# @arregloServicios = []
-  #   @arregloPagoServicios = []
-
-
+    # @arregloPagoServicios = []
     @personaRepo = PersonaRepository.new()
     @habitacionRepo = HabitacionRepository.new()
 	end
@@ -23,21 +21,20 @@ class Administracion
   # end
 
   def registrarPersona(persona)
-    puts('ok')
-    # resultadoRegistro = personaRepo.registrarPersona(persona)
-    # return resultadoRegistro
-  end
-
-  def registrarServicio(servicio)
-    resultadoRegistro = servicioRepo.registrarServicio(servicio)
+    resultadoRegistro = personaRepo.registrarPersona(persona)
     return resultadoRegistro
   end
 
+  # def registrarServicio(servicio)
+  #   resultadoRegistro = servicioRepo.registrarServicio(servicio)
+  #   return resultadoRegistro
+  # end
+
   # ==================== Getters =====================
-  def obtenerHabitaciones()
-    habitaciones = habitacionRepo.obtenerHabitaciones()
-    return habitaciones
-  end
+  # def obtenerHabitaciones()
+  #   habitaciones = habitacionRepo.obtenerHabitaciones()
+  #   return habitaciones
+  # end
 
   def obtenerPersonas()
     personas = personaRepo.obtenerPersonas()
