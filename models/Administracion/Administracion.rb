@@ -28,6 +28,11 @@ class Administracion
     # return resultadoRegistro
   end
 
+  def registrarServicio(servicio)
+    resultadoRegistro = servicioRepo.registrarServicio(servicio)
+    return resultadoRegistro
+  end
+
   # ==================== Getters =====================
   def obtenerHabitaciones()
     habitaciones = habitacionRepo.obtenerHabitaciones()
