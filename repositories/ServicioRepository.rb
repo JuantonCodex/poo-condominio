@@ -1,7 +1,7 @@
 require_relative '../factories/ServicioFactory.rb'
 
 class ServicioRepository
-
+  attr_accessor :servicios
   def initialize()
     @servicios = []
   end
@@ -25,5 +25,5 @@ class ServicioRepository
   def agregarServicio(servicio)
     servicios.push(servicio)
   end
-  
+
 end

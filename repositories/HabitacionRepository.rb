@@ -2,6 +2,7 @@ require_relative '../models/Habitacion/Habitacion.rb'
 
 class HabitacionRepository
 
+  attr_accessor :habitaciones
   def initialize()
     @habitaciones = []
   end
@@ -25,5 +26,5 @@ class HabitacionRepository
   def agregarHabitacion(habitacion)
     habitaciones.push(habitacion)
   end
-  
+
 end

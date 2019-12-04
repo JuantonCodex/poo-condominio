@@ -37,4 +37,15 @@ class TestCondominio < Test::Unit::TestCase
     @controlador.obtenerVisitasXHabitacion(1)
   end
 
+  def testObtenerHabitaciones
+    puts 'Listado de habitaciones'
+    @controlador.cargarHabitaciones
+  end
+
+  def testObtenerServicios
+    puts '---------------------'
+    puts 'Listado de Servicios'
+    @controlador.cargarServicios
+  end
+
 end

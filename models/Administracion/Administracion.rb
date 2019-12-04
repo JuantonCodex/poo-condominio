@@ -19,6 +19,7 @@ class Administracion
     end
 
     def registrarServicio(servicio)
+        puts servicio.nombre
         arregloServicios.push(servicio)
     end
 
@@ -29,6 +30,11 @@ class Administracion
     def obtenerListaPersonas
         return arregloPersonas
     end
+
+    def obtenerListaServicios
+        return arregloServicios
+    end
+
     def obtenerVisitasXFecha(fecha)
         arreglo = []
         for persona in arregloPersonas
