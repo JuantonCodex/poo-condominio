@@ -20,4 +20,3 @@ controlador.registrar('servicio',4, 'Seguridad')
 controlador.obtenerHabitaciones()
 puts "-------------------"
 controlador.obtenerServicios()
-
