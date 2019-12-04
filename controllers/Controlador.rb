@@ -1,5 +1,4 @@
 require_relative '../factories/Factory.rb'
->>>>>>> 10c0eeb8312cc15839c80c0696b61c6b1a919ed4
 
 class Controlador
 
