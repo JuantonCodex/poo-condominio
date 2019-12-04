@@ -10,17 +10,12 @@ class Administracion
         @arregloPagoServicios = []
     end
 
-    def registrarHabitacion(habitacion)
-        arregloHabitaciones.push(habitacion)
-    end
-
     def registrarPersona(persona)
         arregloPersonas.push(persona)
     end
 
-    def registrarServicio(servicio)
-        puts servicio.nombre
-        arregloServicios.push(servicio)
+    def registrarPagoServicio(pagoServicio)
+        arregloPagoServicios.push(pagoServicio)
     end
 
     def registrarPagoServicio(pagoServicio)
@@ -33,6 +28,10 @@ class Administracion
 
     def obtenerListaServicios
         return arregloServicios
+    end
+
+    def obtenerListaPagoServicio
+        return arregloPagoServicios
     end
 
     def obtenerVisitasXFecha(fecha)
@@ -84,4 +83,25 @@ class Administracion
         end
         return arreglo
     end
+
+    def obtenerPagoServicioXDNI(dni)
+        arreglo = []
+        for pagoServicio in arregloPagoServicios
+                if pagoServicio.personaID == dni
+                    arreglo.push(pagoServicio)
+                end
+        end
+        return arreglo
+    end
+
+    def obtenerPagoServicioXHabitacion(numeroHabitacion)
+        arreglo = []
+        for pagoServicio in arregloPagoServicios
+                if pagoServicio.habitacionID == numeroHabitacion
+                    arreglo.push(pagoServicio)
+                end
+        end
+        return arreglo
+    end
+
 end

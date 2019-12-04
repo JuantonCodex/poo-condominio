@@ -15,11 +15,34 @@ class TestCondominio < Test::Unit::TestCase
 		@controlador.registrarPersona("familia", 2, 2, "Rocel", "Chavez", 40404041, 35)
 		@controlador.registrarPersona("visita", 3, 1, "Raquel", "Sanchez", 40404042, 29, "2019-12-01")
 		@controlador.registrarPersona("visita", 4, 1, "Andrea", "Vivas", 40404043, 30, "2019-11-20")
+    @controlador.registrarPersona("visita", 5, 2, "Juan", "Ramos", 40404044, 30, "2019-10-20")
+    @controlador.registrarPersona("familia", 6, 3, "Jose", "Carlos", 40404045, 31)
+
+    @controlador.registrarPagoServicio("pagoServicio",1, 40404040, 1, "Febrero", 32)
+    @controlador.registrarPagoServicio("pagoServicio",1, 40404041, 2, "Marzo",  35)
+    @controlador.registrarPagoServicio("pagoServicio",2, 40404045, 3, "Abril",  29)
+    @controlador.registrarPagoServicio("pagoServicio",3, 40404040, 4, "Marzo", 76)
 
 	end
+
+  def testObtenerHabitaciones
+    puts 'Listado de habitaciones'
+    @controlador.cargarHabitaciones
+  end
+
+  def testObtenerServicios
+    puts '---------------------'
+    puts 'Listado de Servicios'
+    @controlador.cargarServicios
+  end
+
 	def test1ListaPersonas
 		@controlador.obtenerListaPersonas()
-	end
+  end
+
+  def testListaPagoServicio
+    @controlador.obtenerListaPagoServicio()
+  end
 
 	def test2BuscarVisitaXFecha
 		@controlador.obtenerVisitasXFecha("2019-12-01")
@@ -34,18 +57,14 @@ class TestCondominio < Test::Unit::TestCase
   end
 
   def test5BuscarVisitaXHabitacion
-    @controlador.obtenerVisitasXHabitacion(1)
+    @controlador.obtenerVisitasXHabitacion(2)
   end
 
-  def testObtenerHabitaciones
-    puts 'Listado de habitaciones'
-    @controlador.cargarHabitaciones
+  def testBuscarPagoServicioXDNI
+    @controlador.obtenerPagoServicioXDNI(40404045)
   end
-
-  def testObtenerServicios
-    puts '---------------------'
-    puts 'Listado de Servicios'
-    @controlador.cargarServicios
+  def testBuscarPagoServicioXHabitacion
+    @controlador.obtenerPagoServicioXHabitacion(1)
   end
 
 end

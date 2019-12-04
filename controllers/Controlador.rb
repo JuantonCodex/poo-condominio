@@ -52,9 +52,29 @@ class Controlador
      puts "-------------------"
   end
 
+  def obtenerPagoServicioXDNI(dni)
+     puts "Pago de servicio del DNI #{dni}"
+     arreglo = administracion.obtenerPagoServicioXDNI(dni)
+     vista.imprimirListado(arreglo)
+     puts "-------------------"
+  end
+
+  def obtenerPagoServicioXHabitacion(numeroHabitacion)
+     puts "Pago de servicio de la habitacion #{numeroHabitacion}"
+     arreglo = administracion.obtenerPagoServicioXHabitacion(numeroHabitacion)
+     vista.imprimirListado(arreglo)
+     puts "-------------------"
+  end
+
   def registrarPersona(tipo, *arg)
     persona = Factory.dameObjeto(tipo, *arg)
     resultado = administracion.registrarPersona(persona)
+        #vista.mostrarMensaje(resultado)
+  end
+
+  def registrarPagoServicio(tipo, *arg)
+    pagoServicio = Factory.dameObjeto(tipo, *arg)
+    resultado = administracion.registrarPagoServicio(pagoServicio)
         #vista.mostrarMensaje(resultado)
   end
 
@@ -69,6 +89,13 @@ class Controlador
        puts "Lista de servicios"
        arregloServicios = administracion.obtenerListaServicios()
        vista.imprimirListado(arregloServicios)
+       puts "-------------------"
+  end
+
+  def obtenerListaPagoServicio()
+       puts "Lista de pago de servicios"
+       arregloPagoServicio = administracion.obtenerListaPagoServicio()
+       vista.imprimirListado(arregloPagoServicio)
        puts "-------------------"
   end
 
