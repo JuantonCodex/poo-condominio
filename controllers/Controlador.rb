@@ -1,7 +1,3 @@
-require_relative '../controllers/BaseControlador.rb'
-require_relative '../repositories/ServicioRepository.rb'
-require_relative '../repositories/PersonaRepository.rb'
-require_relative '../repositories/HabitacionRepository.rb'
 require_relative '../factories/Factory.rb'
 
 class Controlador
@@ -9,28 +5,25 @@ class Controlador
   attr_accessor :vista, :administracion
 
   def initialize(administracion, vista)
-    @vista = vista
     @administracion = administracion
+    @vista = vista
   end
 
   # ==================== Setters =====================
-
-  # Registra cualquier tipo de objeto
-  def registrar(tipo, *argumentos)
-
-    # Objeto dinámico
-    objeto = Factory.dameObjeto(tipo, *argumentos)
-
-    case tipo
-    when "habitacion"
-      resultado = administracion.registrarHabitacion(objeto)
-    when "servicio"
-      puts 'registrar servicio'
-    end
+  def registrarHabitacion(*argumentos)
+    habitacion = Factory.dameObjeto('habitacion', *argumentos)
+    resultado = administracion.registrarHabitacion(habitacion)
 
     # Muestra el resultado del registro
     vista.mostrarMensaje(resultado)
+  end
 
+  def registrarPersona(*argumentos)
+    persona = Factory.dameObjeto('persona', *argumentos)
+    resultado = administracion.registrarPersona(persona)
+
+    # Muestra el resultado del registro
+    vista.mostrarMensaje(resultado)
   end
 
   # ==================== Getters =====================
@@ -38,6 +31,12 @@ class Controlador
     habitaciones = administracion.obtenerHabitaciones()
     vista.imprimirListado(habitaciones)
   end
+
+  def obtenerPersonas
+    personas = administracion.obtenerPersonas()
+    vista.imprimirListado(personas)
+  end
+
   # def cargarServicios
   #   servicioRepo = ServicioRepository.new
   #   servicios = servicioRepo.obtenerServicios
@@ -61,17 +60,5 @@ class Controlador
   #   vista.imprimirListado(arreglo)
   #   puts "-------------------"
   # end
-
-   def registrarPersona(tipo, *arg)
-      persona = Factory.dameObjeto(tipo, *arg)
-      resultado = administracion.registrarPersona(persona)
-      #vista.mostrarMensaje(resultado)
-   end
-   def obtenerListaPersonas()
-         puts "Lista de personas"
-         arregloPersonas = administracion.obtenerListaPersonas()
-         vista.imprimirListado(arregloPersonas)
-         puts "-------------------"
-   end
 
 end
