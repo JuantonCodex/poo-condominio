@@ -1,6 +1,3 @@
-# Esta clase identifica al espacio ocupado por una familia
-# o grupo de habitantes, tal como un departamento
-
 class PagoServicio
   attr_accessor :habitacionID, :personaID, :servicioID, :periodo, :valor
   def initialize(habitacionID, personaID, servicioID, periodo,valor)

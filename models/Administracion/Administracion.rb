@@ -57,7 +57,6 @@ class Administracion
         return arreglo
     end
 
-
     def obtenerVisitasXDNI(dni)
         arreglo = []
         for persona in arregloPersonas
