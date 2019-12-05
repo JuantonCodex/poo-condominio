@@ -103,4 +103,19 @@ class Administracion
         return arreglo
     end
 
+
+    def obtenerListadoDeudores()
+        arreglo = []
+        for pagoServicio in arregloPagoServicios
+                if pagoServicio.valor == 0
+                    for persona in arregloPersonas
+                        if persona.dni == pagoServicio.personaID
+                            arreglo.push(pagoServicio)
+                        end
+                    end
+                end
+        end
+        return arreglo
+    end
+
 end

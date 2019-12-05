@@ -20,8 +20,8 @@ class TestCondominio < Test::Unit::TestCase
 
     @controlador.registrarPagoServicio("pagoServicio",1, 40404040, 1, "Febrero", 32)
     @controlador.registrarPagoServicio("pagoServicio",1, 40404041, 2, "Marzo",  35)
-    @controlador.registrarPagoServicio("pagoServicio",2, 40404045, 3, "Abril",  29)
-    @controlador.registrarPagoServicio("pagoServicio",3, 40404040, 4, "Marzo", 76)
+    @controlador.registrarPagoServicio("pagoServicio",2, 40404045, 3, "Abril",  0)
+    @controlador.registrarPagoServicio("pagoServicio",3, 40404040, 4, "Marzo", 0)
 
 	end
 
@@ -63,8 +63,13 @@ class TestCondominio < Test::Unit::TestCase
   def testBuscarPagoServicioXDNI
     @controlador.obtenerPagoServicioXDNI(40404045)
   end
+
   def testBuscarPagoServicioXHabitacion
     @controlador.obtenerPagoServicioXHabitacion(1)
+  end
+
+  def testObtenerListadoDeudores
+    @controlador.obtenerListadoDeudores
   end
 
 end

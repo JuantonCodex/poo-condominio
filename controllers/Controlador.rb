@@ -99,4 +99,11 @@ class Controlador
        puts "-------------------"
   end
 
+  def obtenerListadoDeudores()
+       puts "Lista de deudores"
+       arreglo = administracion.obtenerListadoDeudores()
+       vista.imprimirListado(arreglo)
+       puts "-------------------"
+  end
+
 end
